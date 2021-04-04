@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-04 16:39:21" itemprop="dateModified" datetime="2021-04-04T16:39:21+08:00">2021-04-04</time>
+                <time title="修改时间：2021-04-04 16:43:27" itemprop="dateModified" datetime="2021-04-04T16:43:27+08:00">2021-04-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,177 +213,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Java面向对象-上"><a href="#Java面向对象-上" class="headerlink" title="Java面向对象(上)"></a>Java面向对象(上)</h1><h2 id="类-Class-和对象-Object"><a href="#类-Class-和对象-Object" class="headerlink" title="类(Class)和对象(Object)"></a>类(Class)和对象(Object)</h2><h2 id="1-类和对象是面向对象的核心概念"><a href="#1-类和对象是面向对象的核心概念" class="headerlink" title="1. 类和对象是面向对象的核心概念"></a>1. 类和对象是面向对象的核心概念</h2><ol>
-<li>类是对一类事物的表述，是抽象的、概念上的定义</li>
-<li>对象是实例存在的每个个体，因而也被称为实例(instance)</li>
-</ol>
-<p>“面向对象程序设计的重点是类的设计，设计类就是设计类的成员”</p>
-<h2 id="2-Java类及类成员"><a href="#2-Java类及类成员" class="headerlink" title="2. Java类及类成员"></a>2. Java类及类成员</h2><p>常见的类成员：</p>
-<ul>
-<li>属性：对应类中的成员变量</li>
-<li>行为：对应类中的成员方法</li>
-</ul>
-<ol>
-<li>属性<br>属性 = 成员变量 = field = 域、字段</li>
-<li>方法<br>方法 = 成员方法 = 函数 = method</li>
-<li>创建类的对象<br>创建类的对象 = 类的实例化 = 实例化类</li>
-</ol>
-<h2 id="3-Java类和对象的使用-面向对象的直观实现"><a href="#3-Java类和对象的使用-面向对象的直观实现" class="headerlink" title="3. Java类和对象的使用(面向对象的直观实现)"></a>3. Java类和对象的使用(面向对象的直观实现)</h2><ol>
-<li>创建类，设计类的成员</li>
-<li>创建类的对象</li>
-<li>调用类的属性和方法</li>
-</ol>
-<ul>
-<li>调用属性：”对象.属性”</li>
-<li>调用方法：”对象.方法(参数)”</li>
-</ul>
-<h2 id="4-对象的内存解析"><a href="#4-对象的内存解析" class="headerlink" title="4. 对象的内存解析"></a>4. 对象的内存解析</h2><p>Java内存区域有方法区、堆、虚拟机栈、本地方法区、程序计数器</p>
-<ul>
-<li>堆：存放对象的实例</li>
-<li>栈：存储局部变量</li>
-<li>方法区：存储类信息、常量、静态变量、即时编译器编译后的代码</li>
-</ul>
-<h2 id="5-属性与局部变量的对比"><a href="#5-属性与局部变量的对比" class="headerlink" title="5. 属性与局部变量的对比"></a>5. 属性与局部变量的对比</h2><p>属性(成员变量) 与 局部变量</p>
-<ol>
-<li>相同点</li>
-</ol>
-<ul>
-<li>定义变量的格式： 数据类型 变量名 = 变量值</li>
-<li>先声明，后使用</li>
-<li>变量都有其对应的作用域</li>
-</ul>
-<ol start="2">
-<li>不同点</li>
-</ol>
-<ul>
-<li>在类中声明的位置不同。属性是在类中直接声明，局部变量是在方法内、方法形参、代码块、构造器形参、构造器中的变量</li>
-<li>关于权限修饰符。属性在声明时可以指明其权限，使用权限修饰符，而局部变量不能使用<blockquote>
-<p>常用的权限修饰符：private public 缺省 protected </p>
+          <h1 id="Java面向对象-上"><a href="#Java面向对象-上" class="headerlink" title="Java面向对象(上)"></a>Java面向对象(上)</h1><blockquote>
+<p>本内容包含：</p>
+<p>类、对象、对象的内存解析、方法、封装、Java构造器、MVC设计模式</p>
+<p>关键字：return 、this、package、import</p>
 </blockquote>
-</li>
-<li>默认初始化的值。类的属性，根据其类型，都有默认值。局部变量没有初始化值<blockquote>
-<p>整型：byte short int long –&gt; 0<br>浮点型：float double –&gt; 0.0<br>字符型：char –&gt; \u0000<br>布尔型：boolean –&gt; false<br>引用数据类型：类 接口 数组 –&gt; null</p>
-</blockquote>
-</li>
-<li>在内存中加载的位置。属性加载到堆空间中，局部变量加载到栈当中</li>
-</ul>
-<h2 id="6-方法"><a href="#6-方法" class="headerlink" title="6. 方法"></a>6. 方法</h2><ol>
-<li>方法的声明<br>权限修饰符 返回值类型 方法名(形参列表){方法体}</li>
-<li>方法的权限修饰符<br>Java中规定的权限修饰符：private public 缺省 protected </li>
-<li>方法的返回值类型</li>
-</ol>
-<ul>
-<li>存在返回值<br>如果方法有返回值，则必须在方法声明时，指定返回值类型。同时在方法中必须使用<strong>return</strong>关键字返回指定类型的变量或常量</li>
-<li>不存在返回值<br>如果方法无返回值，则在声明方法中使用void来表示。在方法体中没必要使用return关键字，此时return只当作方法结束的标志</li>
-</ul>
-<ol start="4">
-<li>方法名<br>方法名就是标识符，按照标识符的标准</li>
-<li>形参列表<br>方法可以声明一个、多个或没有的形参</li>
-<li>方法体<br>方法功能的实现</li>
-<li>方法的使用<br>方法中能调用当前类的方法和属性。方法中不能定义方法</li>
-</ol>
-<h2 id="7-关键字–return"><a href="#7-关键字–return" class="headerlink" title="7. 关键字–return"></a>7. 关键字–return</h2><ol>
-<li>作用范围：使用在方法体中</li>
-<li>作用：</li>
-</ol>
-<ul>
-<li>结束方法</li>
-<li>针对于有返回值的方法，使用return返回变量或常量</li>
-</ul>
-<ol start="3">
-<li>注意点<br>return关键字后不能声明执行语句</li>
-</ol>
-<p>##再谈方法</p>
-<ol>
-<li>方法的重载(Overload)<br>在同一个类当中，Java允许存在多个同名的方法，但是这些方法必须满足每个方法的参数列表都不相同<br>注意点：重载不与方法的权限修饰符、返回值类型、形参变量名、方法体没有任何关系</li>
-<li>可变个数形参的方法<br>JDK5.0新增内容<br>可变个数形参的格式: 数据类型 …变量名<blockquote>
-<p>等价于数组</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li>可变个数形参在方法的形参中，只能声明到末尾，只能声明一个</li>
-</ul>
-<ol start="3">
-<li>方法参数的值传递机制</li>
-</ol>
-<p><strong>关于变量的赋值</strong><br>如果变量是基本数据类型，此时赋值的是变量所保存的数据<br>如果变量是引用数据类型，此时赋值的是变量所保存的地址值<br><strong>方法形参的值传递机制</strong><br>形参：<br>实参：<br>值传递机制：<br>如果参数是基本数据类型，此时实参赋值给形参的是实参真实存储的数据<br>如果参数是引用数据类型，此时实参赋值给形参的是实参存储数据的地址值<br>4. 递归方法</p>
-<h2 id="8-封装与隐藏"><a href="#8-封装与隐藏" class="headerlink" title="8. 封装与隐藏"></a>8. 封装与隐藏</h2><p>把该隐藏的内容隐藏，该暴露的内容暴露，这就是封装的思想<br>使用private的修饰符来将声明的属性进行限制，这样就是Java的封装</p>
-<ol>
-<li>封装性的体现<br>我们将类的属性私有化(private)，同时提供一个公开的(public)的方法来获取和设置属性的值</li>
-<li>封装的体现需要权限修饰符来配合<br>Java规定的权限修饰符：private 缺省(default) protected public<br>四种权限用来修饰 类和类的内部结构：属性、方法、构造器、内部类。注意，修饰类只能使用public和缺省来修饰</li>
-</ol>
-<h2 id="9-Java类的构造器-constructor、构造方法"><a href="#9-Java类的构造器-constructor、构造方法" class="headerlink" title="9. Java类的构造器(constructor、构造方法)"></a>9. Java类的构造器(constructor、构造方法)</h2><p>任何一个类，都有构造器</p>
-<ol>
-<li>构造器的作用<br>创建对象<br>初始化对象的结构</li>
-<li>说明</li>
-</ol>
-<ul>
-<li>如果没有显示的定义类的构造器，则系统会默认提供一个空参的构造器</li>
-<li>定义构造器的格式： 权限修饰符 类名 (参数列表){}</li>
-<li>一个类中的多个构造器，构成重载</li>
-<li>一旦显示的定义了类的构造器，系统就不再提供空参构造器</li>
-<li>一个类中至少有一个构造器</li>
-</ul>
-<h2 id="10-属性赋值的先后位置"><a href="#10-属性赋值的先后位置" class="headerlink" title="10. 属性赋值的先后位置"></a>10. 属性赋值的先后位置</h2><ol>
-<li>默认初始化</li>
-<li>显示初始化</li>
-<li>构造器初始化</li>
-<li>通过方法赋值<br>先后顺序为：1→2→3→4</li>
-</ol>
-<h2 id="11-拓展知识：JavaBean"><a href="#11-拓展知识：JavaBean" class="headerlink" title="11. 拓展知识：JavaBean"></a>11. 拓展知识：JavaBean</h2><p>JavaBean是一种Java语言写成的可重用组件</p>
-<p>所谓JavaBean，是符合如下标准的Java类：</p>
-<ul>
-<li>类是公共的</li>
-<li>有一个无参的构造器</li>
-<li>有属性，且有对应的get、set方法</li>
-</ul>
-<h3 id="UML图详解"><a href="#UML图详解" class="headerlink" title="UML图详解"></a>UML图详解</h3><ol>
-<li>+表示public -表示private #表示protected</li>
-<li>方法的写法：方法类型(+ - #) 方法名(参数名:参数类型)：返回值</li>
-</ol>
-<h2 id="12-关键字–this"><a href="#12-关键字–this" class="headerlink" title="12. 关键字–this"></a>12. 关键字–this</h2><p>this关键字的使用:<br><strong>this可以修饰属性、方法、构造器</strong></p>
-<ol>
-<li>修饰属性和方法</li>
-</ol>
-<p>调用当前对象的属性和方法；在类的方法中，我们可以使用”this.属性”和”this.方法”的方式，调用当前对象的属性或方法，但是在通常情况下，我们会省略”this”。特殊情况下，如果方法的形参和类的属性同名时，我们必须使用this关键字，此时this所修饰的属性</p>
-<p>在类的构造中，我们可以使用”this.属性”和”this.方法”的方式，调用当前正在创建对象的属性或方法，但是在通常情况下，我们会省略”this”。特殊情况下，如果构造器的形参和类的属性同名时，我们必须使用this关键字，此时this所修饰的属性<br>2. 修饰构造器</p>
-<p>this(参数);更具参数列表的不同去选择引用的构造器<br>注意点：<br>构造器不能通过this调用自己<br>构造器必须声明在构造器的第一行</p>
-<h2 id="13-关键字–package-import"><a href="#13-关键字–package-import" class="headerlink" title="13. 关键字–package import"></a>13. 关键字–package import</h2><ol>
-<li>package</li>
-</ol>
-<ul>
-<li>为了更好的管理项目的类，故而提出包的概念</li>
-<li>使用package声明类和接口，声明在源文件的首行</li>
-<li>包，属于标识符，遵循标识符的命名规范</li>
-<li>注意：同一个包下，不允许存在同名的类和接口</li>
-</ul>
-<ol start="2">
-<li>import</li>
-</ol>
-<ul>
-<li>在源文件当中显示的使用import结构导入指定包下的类和接口</li>
-<li>声明在包的声明和类的声明之间</li>
-<li>如果需要导入多个结构，则并列写出</li>
-<li>可以使用”xxx.*”的方式，来引入xxx包下的所有接口</li>
-<li>如果使用的Java.lang 下的结构，则可以省略import</li>
-<li>如果类和接口是本包下的，则可以省略import</li>
-<li>如果在源文件中，使用不同包下的同名类，则必须至少有一个类需要全类名的方式来表示</li>
-<li>如果使用”xxx.*”方式表明可以调用xxx下的所有结构，但是要调用xxx下的子包中结构，则仍需要显示导入</li>
-<li>import static 表示导入指定类和接口的静态结构：属性和方法</li>
-</ul>
-<h2 id="14-MVC设计模式"><a href="#14-MVC设计模式" class="headerlink" title="14. MVC设计模式"></a>14. MVC设计模式</h2><p>MVC设计模式是常用的设计模式之一，将程序分为三个层次</p>
-<ul>
-<li>视图模型层</li>
-<li>控制器层</li>
-<li>数据模型层</li>
-</ul>
-<ol>
-<li>模型层 model 主要处理数据<br>数据对象封装model.bean/domain<br>数据库操作类model.dao<br>数据库model.db</li>
-<li>视图层 view 显示数据<br>相关工具类view.utils<br>自定义view view. ui</li>
-<li>控制层 controller 处理业务逻辑<br>应用界面相关controller.activity<br>存放fragment controller.fragment<br>显示列表的适配器controller.adapter<br>服务相关的 controller.service<br>抽取的基类 controller.base</li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/10/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E4%B8%8A/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
