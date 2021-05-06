@@ -159,6 +159,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tocchen.github.io/2021/05/06/MyBatis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/MyImage.jpg">
+      <meta itemprop="name" content="Tocchen">
+      <meta itemprop="description" content="生活没有想象的华丽，普通才是生活本该有的样子">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tocchen_Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/06/MyBatis/" class="post-title-link" itemprop="url">MyBatis</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-06 13:55:34 / 修改时间：13:56:21" itemprop="dateCreated datePublished" datetime="2021-05-06T13:55:34+08:00">2021-05-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-MyBatis"><a href="#1-MyBatis" class="headerlink" title="1. MyBatis"></a>1. MyBatis</h2><p>官网：<a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/">https://mybatis.org/mybatis-3/</a></p>
+<p>MyBatis是持久层框架，用于与数据库之间进行交互</p>
+<h2 id="2-主配置文件xml"><a href="#2-主配置文件xml" class="headerlink" title="2. 主配置文件xml"></a>2. 主配置文件xml</h2><p>head</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">  <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">  <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Configuration</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- 配置环境 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 数据库连接 type: UNPOOLED(不适用数据库连接池) POOLED(数据库连接池)  --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;driver&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;url&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;username&#125;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;password&#125;&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 添加映射 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 在采用注释方式实现数据库操作时使用，指定对应的接口 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 在采用XML文件来实现映射时使用，resource是相对路径，url是绝对路径--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">url</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>properties</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用properties来解析配置文件，完成相关的解耦操作 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span> <span class="attr">url</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>TypeAliases</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TypeAliases</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- type指定类的位置，起别名为alias --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">TypeAlias</span> <span class="attr">type</span>=<span class="string">&quot;&quot;</span> <span class="attr">alias</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">TypeAlias</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- name指定类在的位置，起出的别名为包下的类名 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">TypeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-映射文件"><a href="#3-映射文件" class="headerlink" title="3. 映射文件"></a>3. 映射文件</h2><p>head</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.normal.dao.IuserDao&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Mapper</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- namespace指向映射的接口 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">KeyProperty</span>=<span class="string">&quot;&quot;</span> <span class="attr">KeyColumn</span>=<span class="string">&quot;&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;&quot;</span> <span class="attr">order</span>=<span class="string">&quot;AFTER/BEFORE&quot;</span>&gt;</span> </span><br><span class="line">    	<span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>SQL CRUD</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- id说明在接口中的方法，parameterType说明输入的数据类型 resultType说明输出的数据类型 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://tocchen.github.io/2021/04/06/eclipse%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -438,7 +521,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-07 16:30:21" itemprop="dateModified" datetime="2021-04-07T16:30:21+08:00">2021-04-07</time>
+                <time title="修改时间：2021-04-25 12:17:39" itemprop="dateModified" datetime="2021-04-25T12:17:39+08:00">2021-04-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -816,7 +899,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
